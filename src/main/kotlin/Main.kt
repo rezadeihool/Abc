@@ -4,7 +4,7 @@ import java.io.File;
 
 
 fun main() {
-    val sss = ProcessBuilder("ls -a").start()
+    val sss = ProcessBuilder("ls").start()
 
     sss.inputStream.bufferedReader().forEachLine {
         println("ls command output >>>>>")
