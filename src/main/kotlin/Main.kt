@@ -11,6 +11,10 @@ fun main() {
         println(it)
     }
 
+
+    while (true){
+
+    }
     val nativeDir  = File("native").absoluteFile
     val os = System.getProperty("os.name")
     val server = if (os.contains("windows",true)){
