@@ -4,17 +4,10 @@ import java.io.File;
 
 
 fun main() {
-    val sss = ProcessBuilder("ls").start()
-
-    sss.inputStream.bufferedReader().forEachLine {
-        println("ls command output >>>>>")
-        println(it)
-    }
 
 
-    while (true){
 
-    }
+
     val nativeDir  = File("native").absoluteFile
     val os = System.getProperty("os.name")
     val server = if (os.contains("windows",true)){
