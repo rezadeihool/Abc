@@ -6,6 +6,17 @@ import java.io.File;
 fun main() {
     val nativeDir  = File("native").absoluteFile
     val os = System.getProperty("os.name")
+
+
+    println("Working directory: ${System.getProperty("user.dir")}")
+    println("Native directory: ${nativeDir.absolutePath}")
+    println("Native directory exists: ${nativeDir.isDirectory}")
+    println("Server path: ${server.absolutePath}")
+    println("Server exists: ${server.exists()}")
+    println("Server executable: ${server.canExecute()}")
+    println("Native files: ${nativeDir.list()?.joinToString()}")
+
+
     val server = if (os.contains("windows",true)){
         File(nativeDir, "server.exe")
     }else{
@@ -30,7 +41,6 @@ fun main() {
     val process = ProcessBuilder(*startCommand)
         .directory(nativeDir)
         .redirectErrorStream(true)
-        .inheritIO()
         .start()
 
 
