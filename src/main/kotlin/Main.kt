@@ -6,6 +6,11 @@ import java.io.File;
 fun main() {
     val nativeDir  = File("native").absoluteFile
     val os = System.getProperty("os.name")
+    val server = if (os.contains("windows",true)){
+        File(nativeDir, "server.exe")
+    }else{
+        File(nativeDir, "server")
+    }
 
 
     println("Working directory: ${System.getProperty("user.dir")}")
@@ -17,11 +22,6 @@ fun main() {
     println("Native files: ${nativeDir.list()?.joinToString()}")
 
 
-    val server = if (os.contains("windows",true)){
-        File(nativeDir, "server.exe")
-    }else{
-        File(nativeDir, "server")
-    }
 
 
 
